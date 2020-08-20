@@ -1,18 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-
-const Filling = () => {
+const Filling = ({ cake, pickFilling }) => {
+  const fillings = ['Vanilla', 'Chocolate', 'Cream Cheese', 'Caramel', 'Strawberry Cream']
+  console.log(cake)
   return (
     <div>
       <p>Choose a flavor for your filling:</p>
-      <p>Vanilla</p>
-      <p>Chocolate</p>
-      <p>Cream Cheese</p>
-      <p>Strawberry and Cream</p>
+      <ul>
+        {fillings.map((filling, index) => {
+          return (
+            <li key={index} onClick={() => pickFilling(filling)}>{filling}</li>
+          )
+        })}
+      </ul>
+      {cake.filling && (
       <Link to="/icing">
         <button>Next</button>
       </Link>
+      )}
     </div>
   )
 }

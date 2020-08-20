@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Result = () => {
   return (
     <div>
-      <p>Here's your cake!</p>
+      <p>Your cake is ready!</p>
       <Link to='/'>
         <button>Start over</button>
       </Link>
