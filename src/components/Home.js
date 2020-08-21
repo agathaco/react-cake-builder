@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-    Welcome to the Cake Builder
+    <h1>Welcome to the Cake Builder</h1>
     <Link to="/base">
       <button>
-        Build your Cake
+        Make a Cake!
       </button>
     </Link>
     </div>

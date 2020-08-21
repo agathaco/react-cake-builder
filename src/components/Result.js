@@ -6,7 +6,7 @@ const Result = () => {
     <div>
       <p>Your cake is ready!</p>
       <Link to='/'>
-        <button>Start over</button>
+        <button>Make a new cake</button>
       </Link>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import List from './List'
 
 const Theme = ({ cake, pickTheme }) => {
   console.log(cake)
@@ -8,13 +8,7 @@ const Theme = ({ cake, pickTheme }) => {
   return (
     <div>
       <p>Choose a theme</p>
-      <ul>
-        {themes.map((theme, index) => {
-          return (
-            <li key={index} onClick={() => pickTheme(theme)}>{theme}</li>
-          )
-        })}
-      </ul>
+      <List options={themes} action={pickTheme} cake={cake} cakeKey='theme'/>
       {cake.theme && (
       <Link to="/result">
         <button>Next</button>

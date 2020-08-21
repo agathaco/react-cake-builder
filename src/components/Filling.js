@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import List from './List'
 
 const Filling = ({ cake, pickFilling }) => {
   const fillings = ['Vanilla', 'Chocolate', 'Cream Cheese', 'Caramel', 'Strawberry Cream']
@@ -7,13 +8,7 @@ const Filling = ({ cake, pickFilling }) => {
   return (
     <div>
       <p>Choose a flavor for your filling:</p>
-      <ul>
-        {fillings.map((filling, index) => {
-          return (
-            <li key={index} onClick={() => pickFilling(filling)}>{filling}</li>
-          )
-        })}
-      </ul>
+      <List options={fillings} action={pickFilling} cake={cake} cakeKey='filling'/>
       {cake.filling && (
       <Link to="/icing">
         <button>Next</button>

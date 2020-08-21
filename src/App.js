@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
+import Cake from './components/Cake'
 import Home from './components/Home';
 import Base from './components/Base';
 import Filling from './components/Filling';
@@ -8,7 +9,7 @@ import Tiers from './components/Tiers';
 import Theme from './components/Theme';
 import Result from './components/Result';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +40,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
+        <Cake cake={this.state.cake}/>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/base" render={(props) => <Base cake={this.state.cake} pickBase={(base) => this.updateCake('base', base)} {...props} /> }/>
